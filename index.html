@@ -12,11 +12,32 @@
         <nav class="navbar navbar-dark bg-dark">
             <span class="navbar-brand mb-0 h1 w-100 text-center">Weather Dashboard</span>
         </nav>
+        <!-- Side Nav Bar -->
+        <div class="row">
+          <div class="d-flex" id="wrapper">
 
-        <h1 id="Forecast">5-Day Forecast</h1>
-        <div class="container-main">
-            <div class="row">
-                <div class="col-12">
+          <div class="side-bar-left">
+          <div class="bg-light border-right" id="sidebar-wrapper">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search for a City" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" id="search">search</button>
+            </div>
+          </div>
+          <div class="list-group list-group-flush">
+            <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
+          </div>
+          </div>
+          </div>
+
+
+            <div class="container-main">
+                <div class="col-sm-12">
                      <h3 id="city">City Name</h3>
                      <div class="middle-content">
                          <img src="" alt="icon" id="icon">
@@ -30,11 +51,60 @@
                 </div>
             </div>  
         </div>
+      
+      <div class="weather-cards">
+        <div class="row">
+            <div class="col-sm-2.5">
+                <div class="card border-light mb-3" style="max-width: 18rem;">
+                  <div class="card-header">Header</div>
+                  <div class="card-body">
+                      <h5 class="card-title">Light card title</h5>
+                      <p class="card-text">Some quick example text.</p>
+                </div>
+              </div>
+            </div>
+          <div class="col-sm-2.5">
+              <div class="card border-light mb-3" style="max-width: 18rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                  <h5 class="card-title">Light card title</h5>
+                  <p class="card-text">Some quick example text </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-2.5">
+            <div class="card border-light mb-3" style="max-width: 18rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h5 class="card-title">Light card title</h5>
+                <p class="card-text">Some quick example </p>
+            </div>
+          </div>
+          </div>
+          <div class="col-sm-2.5">
+            <div class="card border-light mb-3" style="max-width: 18rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h5 class="card-title">Light card title</h5>
+                <p class="card-text">Some quick example text </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-2.5">
+            <div class="card border-light mb-3" style="max-width: 18rem;">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h5 class="card-title">Light card title</h5>
+                <p class="card-text">Some quick example text </p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+       
 
-
-    <script src = "script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src ="script.js"></script>
     
 </body>
 </html>
