@@ -29,26 +29,41 @@ function weather(){
         var cityName = $("#city-name").text(cityNameUrl);
         cityContainer.append(cityName);
 
-        var temperatureUrl = response.main.temp;
-        var temperature = ($("#temp").text(temperatureUrl));
-        cityContainer.append(temperature);
+        var tempF = (response.main.temp - 273.15) * 1.80 + 32;
+        var temperatureF = ($("#temp").text("Temperature (F): " + tempF.toFixed() + " degrees"));
+        cityContainer.append(temperatureF);
 
         var humidityUrl = response.main.humidity;
-        var humidity = $("#humidity").text(humidityUrl)
+        var humidity = $("#humidity").text("Humidity: " + humidityUrl +"%")
         cityContainer.append(humidity);
 
-        // var UVindexUrl = 
-        // var UVindex = $("UVindex").text(UVindexUrl)
-        // cityContainer.append(UVindex);
+        var windUrl = response.wind.speed;
+        var wind = $("#wind").text("Wind Speed: " + windUrl +" MPH")
+        cityContainer.append(wind);
+
+        let lat = response.data.coord.lat;
+        let lon = response.data.coord.lon;
+        function UVindex(){
+            let UVindex = $("UVindex").val();
+            var url3 = "http://api.openweathermap.org/data/2.5/uvi?q=" +cityInput+ "&appid=" + APIKey;
+            console.log(UVindex)
+            $.ajax({
+                url: url3,
+                method: "GET"
+            })
+            .then(function(response){
+                console.log(response)
+            
+            });
+        } $("#search").on("click", weather);
+        UVindex();
+
+        
 
     });
 
-    
-
-  
-
-
 }    $("#search").on("click", weather);
+
 
 function forecast(){
     let cityInput = $("#city-input").val();
