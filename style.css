@@ -1,3 +1,11 @@
+#currentDay{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.75rem;
+    color: white;
+    display: inline;
+}
 h1, h3, h4, span{
     margin: 0;
     padding: 25px 5px;
@@ -36,6 +44,7 @@ span{
     background-color: transparent;
     padding-right: 350px;
     padding-left: 100px;
+    padding-top: 0px;
 }
 
 .input-group-text{
@@ -51,14 +60,22 @@ span{
     padding-left: 10px;
 
 }
-.weather-cards{
+.card{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    background-color: lightblue;
+    border: 1px solid black;
     float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    padding-top: 10px;
 }
 .weather-cards{
-    margin-left: 100px;
-    margin-right: 100px;
-    justify-content: center;
-
+    margin-left: 9%;
+    margin-right: 7%;
 }
+
 
 
