@@ -1,3 +1,6 @@
+*{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
 #currentDay{
     text-align: center;
     margin-left: auto;
@@ -36,19 +39,13 @@ h5{
     margin: 0;
     padding: 10px;
     text-align: left;
+    margin-left: 17px;
 }
-span{
-    font-size: 1.5rem;
-    margin: 0;
-    /* padding: 25px 5px; */
-    text-align: left;
-}
-
 
 .container-main{
     text-align: left;
     width: 100vw;
-    height: auto;
+    height: 50vh;
     border: 1px solid black;
     margin: 0 auto;
     background-color: transparent;
@@ -56,7 +53,39 @@ span{
     padding-left: 30px;
     padding-top: 0px;
 }
+.low{
+    background-color: green;
+    color: green;
+}
+.moderate{
+    background-color: yellow;
+    color: yellow;
+}
+.high{
+    background-color: orange;
+    color: orange;
+}
+.vhigh{
+    background-color: red;
+    color: red;
+}
+.extreme{
+    background-color: purple;
+    color: purple;
+}
 
+
+
+
+
+button{
+    border-radius: 4px;
+    width: 10vw;
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
 #search{
     width: auto;
 }
@@ -65,12 +94,22 @@ span{
     padding-left: 10px;
 
 }
+.list-group{
+    margin-left: 15px;
+    margin-top: 0;
+}
+
+
+
+
+
+
 .card{
     width: 200px;
     height: 200px;
     text-align: center;
-    background-color: lightblue;
-    border: 1px solid black;
+    background-color: rgb(5, 5, 148);
+    color: white;
     float: left;
     margin-left: 20px;
     margin-right: 20px;
@@ -81,6 +120,8 @@ span{
     margin-left: 9%;
     margin-right: 7%;
 }
+
+
 
 
 
