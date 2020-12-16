@@ -30,33 +30,25 @@ function weather(){
 
      
 
+        var cityNameUrl = response.name;
+        var cityName = $("#city-name").text(cityNameUrl);
+        cityContainer.append(cityName);
+
         let weatherPic = response.weather[0].icon;
-        // var iconURL = `https://openweathermap.org/img/w/${weatherPic}.png`;
         var iconURL = "https://openweathermap.org/img/w/"+weatherPic+".png";
         var iconEl = $("<img>");
         iconEl.attr("src", iconURL);
-        // cityContainer.append(iconEl);
+        cityContainer.append(iconEl);
 
-        var dateEl = $("#currentDay2")
-        $("#currentDay2").text(
-            luxon.DateTime.local().toLocaleString({
-            weekday: '2-digit /', 
-            month: '2-digit /', 
-            day: '2-digit', 
-        }))
+        // var dateEl = $("#currentDay2")
+        // $("#currentDay2").text(
+        //     luxon.DateTime.local().toLocaleString({
+        //     weekday: '2-digit /', 
+        //     month: '2-digit /', 
+        //     day: '2-digit', 
+        // }))            
+        // cityContainer.append(dateEl);
 
-        var cityNameUrl = response.name;
-        var cityName = $("#city-name").text(cityNameUrl);
-        cityContainer.append(cityName, iconEl);
-
-       
-
-        // const currentDate = new Date(response.dt);
-        // console.log(currentDate);
-        // var day = currentDate.getDate();
-        // var month = currentDate.getMonth() + 1;
-        // var year = currentDate.getFullYear();
-        // cityName.innerHTML = response.name + " (" + month + "/" + day + "/" + year + ") ";
 
         var tempF = (response.main.temp - 273.15) * 1.80 + 32;
         var temperatureF = ($("#temp").text("Temperature (F): " + tempF.toFixed() + " degrees"));
@@ -81,29 +73,18 @@ function weather(){
             .then(function(response){
                 console.log(response)
                 var UVindex = response.value;
-                $("#UVindex").text("UV Index: " + response.value);
-
+                $("#UVindex").text("UV Index: " + response.value).removeClass();
                 console.log({UVindex});
                     if (UVindex <=2){
-                        if(currentClass)UVindex.removeClass(currentClass)
                         UVElement.classList.add("low");
-                        // currentClass = "low"
-                    }else if ((UVindex === 3 || UVindex <=5)){
-                        if(currentClass)UVindex.removeClass(currentClass)
+                    }else if ((UVindex >= 3 && UVindex <=5)){
                         UVElement.classList.add("moderate")
-                        // currentClass = "moderate"
-                    }else if ((UVindex === 6 || UVindex <=7)){
-                        if(currentClass)UVindex.removeClass(currentClass)
+                    }else if ((UVindex >= 6 && UVindex <=7)){
                         UVElement.classList.add("high")
-                        // currentClass = "high"
-                    }else if((UVindex === 8 || UVindex <=10)){
-                        if(currentClass)UVindex.removeClass(currentClass)
+                    }else if((UVindex >= 8 && UVindex <=10)){
                         UVElement.classList.add("vhigh")
-                        // currentClass = "vhigh"
-                    }else if ((UVindex === 11)){
-                        if(currentClass)UVindex.removeClass(currentClass)
+                    }else {
                         UVElement.classList.add("extreme")
-                        // currentClass = "extreme"
                     }
                 });
 
