@@ -9,7 +9,9 @@
     color: white;
     display: inline;
 }
-
+.hide{
+    display: none;
+}
 
 h1 {
     text-align: left;
