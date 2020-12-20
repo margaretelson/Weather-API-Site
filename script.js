@@ -3,14 +3,6 @@ script.src = "https://code.jquery.com/jquery-3.2.1.min.js";
 script.type = "text/javascript";
 document.getElementsByTagName("head")[0].appendChild(script);
 
-// function loadHistory () {
-//     var lastSearched = localStorage.getItem("lastSearched")
-//     if (lastSearched !== null){
-//         $("#cityInput").val(lastSearched);
-//         renderBtn();
-//     }
-// }
-// loadHistory();
 
 $("#currentDay").text(
   luxon.DateTime.local().toLocaleString({
@@ -26,9 +18,6 @@ function remove() {
   $("#iconPic").empty();
 }
 
-
-
-// function renderBtn() {
   function weather() {
     let cityInput = $("#city-input").val();
     var url = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${APIKey}`;
@@ -54,12 +43,8 @@ function remove() {
       iconEl.attr("src", iconURL);
       cityContainer.append(iconEl);
 
-      //How the heck do you put in the date??
-
       var tempF = (response.main.temp - 273.15) * 1.8 + 32;
-      var temperatureF = $("#temp").text(
-        "Temperature (F): " + tempF.toFixed(1) + " degrees"
-      );
+      var temperatureF = $("#temp").text("Temperature (F): " + tempF.toFixed(1) + " degrees");
       cityContainer.append(temperatureF);
 
       var humidityUrl = response.main.humidity;
@@ -122,13 +107,9 @@ function remove() {
         for (var i = 0; i < forecastC.length; i+=1) {
           console.log(i);
         
-
           $("#temperature-card" + (i)).text("Temperature: " + ((response.list[forecastC[i]].main.temp - 273.15) * 1.8 +32).toFixed(1) + " F");
           $("#wind-card" + (i)).text("Wind Speed: " + response.list[forecastC[i]].wind.speed + " MPH");
           $("#humidity-card" + (i)).text("Humidity: " + response.list[forecastC[i]].main.humidity + " %");
-          var icon = response.list[forecastC[i]].weather[i].icon;
-          var iconURL = "https://openweathermap.org/img/w/" + icon + ".png";
-          $("#icon-card" + (i)).attr("src", iconURL);
 
         }
         remove();
@@ -136,19 +117,4 @@ function remove() {
     });
   }$("#search").on("click", weather);
 
-
-//   var initialBtn = $("#search")
-//   initialBtn.on("click", function (event){
-//       localStorage.setItem("")
-//   })
-//   $(".buttonsList").append("<button>" + response.name + "</button>");
-//   renderBtn;
-
-//   var searchBtn = $("button");
-//   searchBtn.on("click", function (e){
-//       e.preventDefault();
-//       $("#cityInput").val($(this).text());
-//       renderBtn();
-//   })
-// }
 
