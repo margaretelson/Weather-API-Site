@@ -4,7 +4,7 @@ This Weather Application allows the user to input any city into the search bar a
 
 This was made with Javascript and HTML, styled with Bootstrap and CSS, and linked to the Open Weather API. 
 
-[Click here to see the live site!]()
+[Click here to see the live site!](https://margaretelson.github.io/Weather-API-Site/)
 
 ![Screenshot of Weather Deashboard](./weatherapi.png)
 
